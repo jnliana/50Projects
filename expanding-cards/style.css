@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.bg {
+  height: 80vh;
+  display: flex;
+  border-radius: 4rem;
+  align-items: end;
+  padding: -5rem;
+  padding-bottom: 3rem;
+  position: relative;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  -webkit-transition: all 700ms ease-in;
+}
+
+.bg h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.bg.active {
+  flex: 5;
+}
+
+.bg.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.bg.one,
+.bg.cinco {
+  background: url('images/img-1.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.bg.two,
+.bg.cuatro {
+  background: url('images/img-2.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.bg.three,
+.bg.seis {
+  background: url('images/img-3.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
