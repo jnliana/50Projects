@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+:root {
+  --bg-color: #d6d4d4;
+  --txt-color: #1b1b1b;
+  --bg-light: #f0eeee;
+  --icon-green: #2ecc71;
+  --icon-blue: #3498db;
+  --shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
+  display: flex;
+  justify-content: center;
+  font-family: 'Muli', sans-serif;
+}
+
+.faqs-container {
+  padding: 1rem 2rem;
+  width: 600px;
+  h2 {
+    text-transform: capitalize;
+    text-align: center;
+  }
+  & .questions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    & .question {
+      background-color: var(--bg-light);
+      padding: 1.5rem 3.5rem 1rem 1.5rem;
+      font-size: 0.9rem;
+      border-radius: 0.7rem;
+      position: relative;
+      overflow: hidden;
+      &.active {
+        box-shadow: var(--shadow);
+        &::before,
+        &::after {
+          content: '\f075';
+          font-family: 'Font Awesome 5 Free';
+          color: var(--icon-green);
+          font-size: 7rem;
+          position: absolute;
+          top: 2rem;
+          left: 2rem;
+          opacity: 0.1;
+        }
+        &::after {
+          color: var(--icon-blue);
+          top: -1rem;
+          left: -2rem;
+          transform: rotateY(180deg);
+        }
+        & .faq-toggle .fa-times {
+          display: block;
+        }
+        & .faq-toggle .fa-chevron-down {
+          display: none;
+        }
+        & p {
+          display: block;
+        }
+      }
+      h3 {
+        font-size: 1.2rem;
+        margin: 0;
+      }
+      p {
+        display: none;
+      }
+      & .faq-toggle {
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        &:focus {
+          outline: 0;
+        }
+        i {
+          font-size: 1.3rem;
+          color: var(--txt-color);
+        }
+        & .fa-times {
+          display: none;
+        }
+      }
+    }
+  }
+}
